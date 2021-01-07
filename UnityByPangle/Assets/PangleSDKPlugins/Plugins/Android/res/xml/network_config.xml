@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+    <domain-config>
+        <domain includeSubdomains="true">i.snssdk.com</domain>
+        <domain includeSubdomains="true">is.snssdk.com</domain>
+        <domain includeSubdomains="true">extlog.snssdk.com</domain>
+        <domain includeSubdomains="true">pangolin16.sgsnssdk.com</domain>
+        <domain includeSubdomains="true">pangolin.snssdk.com</domain>
+        <domain includeSubdomains="true">pangolin16.isnssdk.com</domain>
+        <domain includeSubdomains="true">log-mva.isnssdk.com</domain>
+        <domain includeSubdomains="true">log.sgsnssdk.com</domain>
+        <!--        tnc抓包配置-->
+        <domain includeSubdomains="true">dm16-useast1a.byteoversea.com</domain>
+        <domain includeSubdomains="true">dm16-useast2a.byteoversea.com</domain>
+        <domain includeSubdomains="true">dm16-alisg.byteoversea.com</domain>
+        <domain includeSubdomains="true">dm.toutiao.com</domain>
+        <domain includeSubdomains="true">dm-hl.toutiao.com</domain>
+        <domain includeSubdomains="true">dm-lq.toutiao.com</domain>
+        <domain includeSubdomains="true">dm.bytedance.com</domain>
+
+        <domain includeSubdomains="true">sf3-ttcdn-tos.pstatp.com</domain>
+        <domain includeSubdomains="true">sf-tb-sg.ibytedtos.com</domain>
+        <domain includeSubdomains="true">sf16-muse-va.ibytedtos.com</domain>
+
+        <domain includeSubdomains="true">www.toutiaopage.com</domain>
+        <domain includeSubdomains="true">sf1-ttcdn-tos.pstatp.com</domain>
+        <domain includeSubdomains="true">sf6-ttcdn-tos.pstatp.com</domain>
+        <domain includeSubdomains="true">s3.pstatp.com</domain>
+        <domain includeSubdomains="true">is-lf.snssdk.com</domain>
+        <domain includeSubdomains="true">is-hl.snssdk.com</domain>
+        <domain includeSubdomains="true">v16-ad.byteoversea.com</domain>
+        <domain includeSubdomains="true">impression.appsflyer.com</domain>
+        <domain includeSubdomains="true">p0.ipstatp.com</domain>
+        <domain includeSubdomains="true">p16.hypstarcdn.com</domain>
+        <domain includeSubdomains="true">demofiles.smaato.com</domain>
+        <domain includeSubdomains="true">sf16-fe-tos-sg.i18n-pglstatp.com</domain>
+
+        <domain includeSubdomains="true">sf1-be-pack.pglstatp-toutiao.com</domain>
+        <domain includeSubdomains="true">sf1-fe-tos.pglstatp-toutiao.com</domain>
+        <domain includeSubdomains="true">sf3-fe-tos.pglstatp-toutiao.com</domain>
+        <domain includeSubdomains="true">log-api.pangolin-sdk-toutiao.com</domain>
+        <domain includeSubdomains="true">s3-fe-scm.pglstatp-toutiao.com</domain>
+        <domain includeSubdomains="true">s3a.pstatp.com</domain>
+
+        <domain includeSubdomains="true">api-access.pangolin-sdk-toutiao-b.com</domain>
+        <domain includeSubdomains="true">api-access.pangolin-sdk-toutiao.com</domain>
+        <domain includeSubdomains="true">log-api.pangolin-sdk-toutiao-b.com</domain>
+        <domain includeSubdomains="true">dm.pstatp.com</domain>
+
+        <domain includeSubdomains="true">toblog.ctobsnssdk.com</domain>
+        <domain includeSubdomains="true">bds.snssdk.com</domain>
+        <domain includeSubdomains="true">sdfp.snssdk.com</domain>
+
+        <domain includeSubdomains="true">api16-access-sg.pangle.io</domain>
+        <domain includeSubdomains="true">api16-log-sg.pangle.io</domain>
+        <domain includeSubdomains="true">p16-sign-sg.tiktokcdn.com</domain>
+        <domain includeSubdomains="true">api16-endcard-pack-sg.pangle.io</domain>
+
+        <trust-anchors>
+            <certificates src="user" />//信任用户自己安装的证书
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
