@@ -2,9 +2,8 @@
 
 # UnityByPangle  
      
-***
 
-#Tips:
+# Tips:
 * The example is for **iOS** only.   
 * The example class for the SDK is  `public sealed class Example : MonoBehaviour`
 
@@ -28,7 +27,7 @@ private AdNative AdNative
 }
 
 ```
-***
+
 
 ## FullscreenVideo Ad 
 
@@ -112,7 +111,7 @@ private sealed class FullScreenAdInteractionListener : IFullScreenVideoAdInterac
 	this.fullScreenVideoAd = null;
 ```
 
-***	   
+  
  
 ## RewardVideo Ad 
 
@@ -182,15 +181,10 @@ private sealed class RewardAdInteractionListener : IRewardAdInteractionListener
     }
 
     public void OnAdShow() {}
-
     public void OnAdVideoBarClick() {}
-
     public void OnAdClose() {}
-
     public void OnVideoComplete() {}
-
     public void OnVideoError() {}
-
     public void OnRewardVerify(bool rewardVerify, int rewardAmount, string rewardName) {}
 }
 ```
@@ -201,7 +195,6 @@ private sealed class RewardAdInteractionListener : IRewardAdInteractionListener
 	this.rewardAd = null;
 ```
 
-***
 
 ## PangleTools
 
@@ -214,7 +207,6 @@ private sealed class RewardAdInteractionListener : IRewardAdInteractionListener
 * `getWindowSafeAreaInsetsBottom()`
 * `getWindowSafeAreaInsetsRight()`
 
-***
 
 ## Banner Ad
 
@@ -292,9 +284,7 @@ private sealed class ExpressAdInteractionListener : IExpressAdInteractionListene
 	}
 	
 	public void OnAdClicked(ExpressAd ad) { }
-	
 	public void OnAdShow(ExpressAd ad) { }
-	    
 	public void OnAdClose(ExpressAd ad) { }
 }
 ```
@@ -305,6 +295,85 @@ private sealed class ExpressAdInteractionListener : IExpressAdInteractionListene
 	this.bannerAd = null;
 ```
 
+## Native Ad
 
-***
+### Load Advertisement
+
+* `this` is Example class instance.   
+
+```c#
+private NativeAd nativeFeedAd;
+```
+
+```c#
+public void LoadNativeAd()
+    {
+
+        var adSlot = new AdSlot.Builder()
+            .SetCodeId("900546910")
+            .SetNativeAdType(AdSlotType.Feed)
+            .SetImageAcceptedSize(600, 400)
+            .SetAdCount(1)
+            .Build();
+        this.AdNative.LoadNativeAd(adSlot, new NativeAdListener(this));
+    }
+```
+
+### NativeAdListener
+
+* you can get the load status With NativeAdListener.  
+* `this.example` is the sample object holding nativeAd.  
+* `OnNativeAdLoad ` you can get nativeAd object in this method. 
+* you can customize the view in NativeAd.mm file at`buildupViewFeed` method
+
+```c#
+ private sealed class NativeAdListener : INativeAdListener
+    {
+        private Example example;
+
+        public NativeAdListener(Example example)
+        {
+            this.example = example;
+        }
+
+        public void OnError(int code, string message) { }
+
+        public void OnNativeAdLoad(AndroidJavaObject list,NativeAd ad)
+        {
+            if (ad.GetAdType() == AdSlotType.Feed)
+            {
+                this.example.nativeFeedAd = ad;
+                ad.SetNativeAdInteractionListener(new NativeAdInteractionListener(this.example));
+                this.nativeFeedAd.ShowNativeAd(AdSlotType.Feed);
+            }
+        }
+    }
+```
+
+
+### NativeAdInteractionListener
+
+* You can get a series of events about the user's action
+
+```c#
+private sealed class NativeAdInteractionListener : IInteractionAdInteractionListener
+{
+    private Example example;
+
+    public NativeAdInteractionListener(Example example)
+    {
+        this.example = example;
+    }
+
+    public void OnAdShow() { } 
+    public void OnAdClicked() { } 
+    public void OnAdDismiss() { }
+}
+```
+
+### Destroy Object
+```c#
+	this.nativeFeedAd.Dispose();
+	this.nativeFeedAd = null;
+```
 

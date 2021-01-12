@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{74D892E5-94B8-9313-B594-2390B9F28299}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Example/Example.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/NativeAd.cs">
     <Files>
-      <File FileName="Assets/Example/Example.cs" Line="1158" Column="1" />
+      <File FileName="Assets/Example/Example.cs" Line="21" Column="31" />
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/Dummy/SDK.cs" />
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/SDK.cs" />
-      <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/AdNative.cs" />
+      <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/AdNative.cs" Line="1" Column="1" />
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/AdSlot.cs" />
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/ExpressBannerAd.cs" />
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/PangleTools.cs" />
@@ -13,18 +13,21 @@
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/FullScreenVideoAd.cs" />
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/ExpressFullScreenVideoAd.cs" />
       <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/DrawFeedAd.cs" />
+      <File FileName="Assets/PangleSDKPlugins/PangleAdapterScripts/iOS/NativeAd.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Assets" expanded="True" selected="True">
+            <Node name="Assets" expanded="True">
               <Node name="Example" expanded="True" />
               <Node name="PangleSDKPlugins" expanded="True">
                 <Node name="PangleAdapterScripts" expanded="True">
                   <Node name="Android" expanded="True" />
                   <Node name="Dummy" expanded="True" />
-                  <Node name="iOS" expanded="True" />
+                  <Node name="iOS" expanded="True">
+                    <Node name="NativeAd.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
             </Node>
@@ -35,7 +38,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="70317765-e5f1-4181-bcfa-20639cac4cd9" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0b481399-8540-4489-87ac-8e8809caa92a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
