@@ -155,11 +155,11 @@ private sealed class RewardVideoAdListener : IRewardVideoAdListener
     
     public void OnRewardVideoAdLoad(RewardVideoAd ad)
     {
-    	this.example.rewardAd = ad;
-		ad.SetRewardAdInteractionListener(
-            new RewardAdInteractionListener(this.example));
-       ///show ad
-       this.rewardAd.ShowRewardVideoAd();
+		this.example.rewardAd = ad;
+		///RewardAdInteractionListener
+		ad.SetRewardAdInteractionListener(new RewardAdInteractionListener(this.example));
+		///show ad
+		this.rewardAd.ShowRewardVideoAd();
     }
     
     public void OnRewardVideoCached() {}
@@ -198,8 +198,9 @@ private sealed class RewardAdInteractionListener : IRewardAdInteractionListener
 
 ## PangleTools
 
-`PangleTools` allows you to get the screen `height`, `width`, and **safeAreaInsets** `up`, `down`, `left` and `right` of **window**. (  the unit of value is **pixel**. )
+`PangleTools` allows you to get the screen `scale` `height`, `width`, and **safeAreaInsets** `up`, `down`, `left` and `right` of **window**. (  the unit of value is **pixel**. )
 ### PangleTools method list
+* `getScreenScale`
 * `getScreenWidth()` 
 * `getScreenHeight()`
 * `getWindowSafeAreaInsetsTop()`
@@ -255,7 +256,7 @@ private sealed class ExpressAdListener : IExpressAdListener
     {
 		this.example.bannerAd = ad;
 		ad.SetExpressInteractionListener(new ExpressAdInteractionListener(this.example,1));
-		
+			
 		///show ad
 		float x = PangleTools. getWindowSafeAreaInsetsLeft();
 		float y = PangleTools. getWindowSafeAreaInsetsTop();
@@ -307,16 +308,16 @@ private NativeAd nativeFeedAd;
 
 ```c#
 public void LoadNativeAd()
-    {
+{
 
-        var adSlot = new AdSlot.Builder()
-            .SetCodeId("900546910")
-            .SetNativeAdType(AdSlotType.Feed)
-            .SetImageAcceptedSize(600, 400)
-            .SetAdCount(1)
-            .Build();
-        this.AdNative.LoadNativeAd(adSlot, new NativeAdListener(this));
-    }
+    var adSlot = new AdSlot.Builder()
+        .SetCodeId("900546910")
+        .SetNativeAdType(AdSlotType.Feed)
+        .SetImageAcceptedSize(600, 400)
+        .SetAdCount(1)
+        .Build();
+    this.AdNative.LoadNativeAd(adSlot, new NativeAdListener(this));
+}
 ```
 
 ### NativeAdListener
@@ -328,26 +329,26 @@ public void LoadNativeAd()
 
 ```c#
  private sealed class NativeAdListener : INativeAdListener
-    {
-        private Example example;
-
-        public NativeAdListener(Example example)
-        {
-            this.example = example;
-        }
-
-        public void OnError(int code, string message) { }
-
-        public void OnNativeAdLoad(AndroidJavaObject list,NativeAd ad)
-        {
-            if (ad.GetAdType() == AdSlotType.Feed)
-            {
-                this.example.nativeFeedAd = ad;
-                ad.SetNativeAdInteractionListener(new NativeAdInteractionListener(this.example));
-                this.nativeFeedAd.ShowNativeAd(AdSlotType.Feed);
-            }
-        }
-    }
+{
+	private Example example;
+	
+	public NativeAdListener(Example example)
+	{
+	    this.example = example;
+	}
+	
+	public void OnError(int code, string message) { }
+	
+	public void OnNativeAdLoad(AndroidJavaObject list,NativeAd ad)
+	{
+	    if (ad.GetAdType() == AdSlotType.Feed)
+	    {
+	        this.example.nativeFeedAd = ad;
+	        ad.SetNativeAdInteractionListener(new NativeAdInteractionListener(this.example));
+	        this.nativeFeedAd.ShowNativeAd(AdSlotType.Feed);
+	    }
+	}
+}
 ```
 
 
