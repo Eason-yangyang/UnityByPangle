@@ -16,7 +16,7 @@
 	* We recommend that you set it in the **`application:didFinishLaunchingWithOptions:`** method of the **custom AppController**. 
 	
 ```objective-c
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [super application:application didFinishLaunchingWithOptions:launchOptions];
 
