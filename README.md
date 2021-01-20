@@ -1,11 +1,30 @@
 ![Pangle logo](https://sf16-scmcdn-sg.ibytedtos.com/obj/goofy-sg/ad/pangle/homepage/_next/static/assets/images/pangle-text.491fcc7f.svg)
 
 # UnityByPangle  
-     
+
 
 # Tips:
 * The example is for **iOS** only.   
-* The example class for the SDK is  `public sealed class Example : MonoBehaviour`
+* The example class for the SDK is  `public sealed class Example : MonoBehaviour`  
+
+## Getting Started
+* add **PangleSDK.unitypackage** to Unity project
+* add **PangleAdapterScripts.unitypackage** to Unity project
+* it was Pangle's SDK and Adapter files, so you must set them **import settings**->**Select platforms for plugin** to **Any platform** or **iOS**
+* before get ads, you should call **`setAppID:`** method which in **BUAdSDKManager** class.
+	* If you also need to set other Settings, you must set them before **`setAddId:	`**, such as **`setSpaidApp:`**
+	* We recommend that you set it in the **`application:didFinishLaunchingWithOptions:`** method of the **custom AppController**. 
+	
+```objective-c
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
+
+    [BUAdSDKManager setAppID: @"5000546"];
+    return YES;
+}
+```
+	
 
 ## CreatAdNative
 
@@ -112,7 +131,7 @@ private sealed class FullScreenAdInteractionListener : IFullScreenVideoAdInterac
 ```
 
   
- 
+
 ## RewardVideo Ad 
 
 ### Load Advertisement
