@@ -90,12 +90,12 @@ private sealed class FullScreenVideoAdListener : IFullScreenVideoAdListener
     
     public void OnFullScreenVideoAdLoad(FullScreenVideoAd ad)
     {
-		this.example.fullScreenVideoAd = ad;
-		  	
-		/// add FullScreenAdInteractionListener
-		ad.SetFullScreenVideoAdInteractionListener(new FullScreenAdInteractionListener(this.example));
-		/// show ad
-		ad.ShowFullScreenVideoAd();
+	this.example.fullScreenVideoAd = ad;
+
+	/// add FullScreenAdInteractionListener
+	ad.SetFullScreenVideoAdInteractionListener(new FullScreenAdInteractionListener(this.example));
+	/// show ad
+	ad.ShowFullScreenVideoAd();
     }
     
     public void OnFullScreenVideoCached() { }
@@ -174,11 +174,11 @@ private sealed class RewardVideoAdListener : IRewardVideoAdListener
     
     public void OnRewardVideoAdLoad(RewardVideoAd ad)
     {
-		this.example.rewardAd = ad;
-		///RewardAdInteractionListener
-		ad.SetRewardAdInteractionListener(new RewardAdInteractionListener(this.example));
-		///show ad
-		this.rewardAd.ShowRewardVideoAd();
+	this.example.rewardAd = ad;
+	///RewardAdInteractionListener
+	ad.SetRewardAdInteractionListener(new RewardAdInteractionListener(this.example));
+	///show ad
+	this.rewardAd.ShowRewardVideoAd();
     }
     
     public void OnRewardVideoCached() {}
@@ -219,7 +219,7 @@ private sealed class RewardAdInteractionListener : IRewardAdInteractionListener
 
 `PangleTools` allows you to get the screen `scale` `height`, `width`, and **safeAreaInsets** `up`, `down`, `left` and `right` of **window**. (  the unit of value is **pixel**. )
 ### PangleTools method list
-* `getScreenScale`
+* `getScreenScale()`
 * `getScreenWidth()` 
 * `getScreenHeight()`
 * `getWindowSafeAreaInsetsTop()`
@@ -262,27 +262,27 @@ public void LoadBannerAd()
 ```c#
 private sealed class ExpressAdListener : IExpressAdListener
 {
-    private Example example;
-    private int type;//0:feed   1:banner  2:interstitial
+	private Example example;
+	private int type;//0:feed   1:banner  2:interstitial
 
-    public ExpressAdListener(Example example, int type)
-    {
-        this.example = example;
-        this.type = type;
-    }
-    
-    public void OnExpressBannerAdLoad(ExpressBannerAd ad)
-    {
+	public ExpressAdListener(Example example, int type)
+	{
+		this.example = example;
+		this.type = type;
+	}
+
+	public void OnExpressBannerAdLoad(ExpressBannerAd ad)
+	{
 		this.example.bannerAd = ad;
 		ad.SetExpressInteractionListener(new ExpressAdInteractionListener(this.example,1));
-			
+
 		///show ad
 		float x = PangleTools. getWindowSafeAreaInsetsLeft();
 		float y = PangleTools. getWindowSafeAreaInsetsTop();
 		this.bannerAd.ShowExpressAd(x, y);
-    }
-    
-	 public void OnError(int code, string message) { }
+	}
+
+	public void OnError(int code, string message) { }
 }
 ```
 
