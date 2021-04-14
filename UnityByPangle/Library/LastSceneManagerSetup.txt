@@ -1,5 +1,5 @@
 sceneSetups:
-- path: /Users/eason/.Trash/UnityByPangle2/UnityByPangle/Assets/Example/Example.unity
-  isLoaded: 0
-  isActive: 0
+- path: Assets/Example/Example.unity
+  isLoaded: 1
+  isActive: 1
   isSubScene: 0
