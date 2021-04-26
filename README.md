@@ -11,17 +11,18 @@
 * add **PangleSDK.unitypackage** to Unity project
 * add **PangleAdapterScripts.unitypackage** to Unity project
 * it was Pangle's SDK and Adapter files, so you must set them **import settings**->**Select platforms for plugin** to **Any platform** or **iOS**
-* before get ads, you should call **`setAppID:`** method which in **BUAdSDKManager** class.
-	* If you also need to set other Settings, you must set them before **`setAddId:	`**, such as **`setSpaidApp:`**
-	* We recommend that you set it in the **`application:didFinishLaunchingWithOptions:`** method of the **custom AppController**. 
+* you should set the information with **PangleConfiguration** and initialize PangleSDK with **Pangle**. 
 	
-```objective-c
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    [super application:application didFinishLaunchingWithOptions:launchOptions];
+```c#
+private static void callbackmethod (bool success, string message) {
+    Debug.Log("PangleSDK initialize result is "+success+" error message:"+message);
+}
 
-    [BUAdSDKManager setAppID: @"5000546"];
-    return YES;
+void Start () {
+
+    PangleConfiguration configuration = PangleConfiguration.CreateInstance();
+    configuration.appID = "5000546";
+    Pangle.InitializeSDK(callbackmethod);
 }
 ```
 * **XCodePostProcess.cs**
